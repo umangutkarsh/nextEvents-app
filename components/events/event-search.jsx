@@ -1,16 +1,29 @@
+import { useRef } from 'react';
 import Button from '../ui/button';
 
 import classes from './event-search.module.css';
 
-function EventSearch() {
+function EventSearch({ onSearch }) {
+	const yearInputRef = useRef();
+	const monthInputRef = useRef();
+
+	function formSubmitHandler(event) {
+		event.preventDefault();
+
+		const selectedYear = yearInputRef.current.value;
+		const selectedMonth = monthInputRef.current.value;
+
+		onSearch(selectedYear, selectedMonth);
+	}
+
 	return (
-		<form className={classes.form}>
+		<form className={classes.form} onSubmit={formSubmitHandler}>
 			<div className={classes.controls}>
 				<div className={classes.control}>
 					<label htmlFor='year' className={classes.label}>
 						Year
 					</label>
-					<select id='year' className={classes.select}>
+					<select id='year' className={classes.select} ref={yearInputRef}>
 						<option value='2021'>2021</option>
 						<option value='2022'>2022</option>
 						<option value='2023'>2023</option>
@@ -20,7 +33,7 @@ function EventSearch() {
 					<label htmlFor='month' className={classes.label}>
 						Month
 					</label>
-					<select id='month' className={classes.select}>
+					<select id='month' className={classes.select} ref={monthInputRef}>
 						<option value='1'>January</option>
 						<option value='2'>February</option>
 						<option value='3'>March</option>
