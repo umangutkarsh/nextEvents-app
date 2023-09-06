@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import classes from './event-item.module.css';
+
 function EventItem({ title, image, date, location, id }) {
 	const formattedDate = new Date(date).toLocaleDateString('en-US', {
 		day: 'numeric',
@@ -10,19 +12,19 @@ function EventItem({ title, image, date, location, id }) {
 	const formattedAddress = location.replace(', ', '\n');
 
 	return (
-		<li>
+		<li className={classes.item}>
 			<img src={'/' + image} alt={title} />
-			<div>
-				<div>
+			<div className={classes.content}>
+				<div className={classes.summary}>
 					<h2>{title}</h2>
-					<div>
+					<div className={classes.date}>
 						<time>{formattedDate}</time>
 					</div>
-					<div>
+					<div className={classes.address}>
 						<address>{formattedAddress}</address>
 					</div>
 				</div>
-				<div>
+				<div className={classes.actions}>
 					<Link href={`/events/${id}`}>Explore Event</Link>
 				</div>
 			</div>
