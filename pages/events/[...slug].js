@@ -83,6 +83,10 @@ function FilteredEventsPage(props) {
 
 	return (
 		<React.Fragment>
+			<Head>
+				<title>Filtered Events</title>
+				<meta name='description' content={`All events for ${month}/${year}`} />
+			</Head>
 			<ResultsTitle date={date} />
 			<EventList items={filteredEvents} />
 		</React.Fragment>
