@@ -30,7 +30,7 @@ function handler(req, res) {
 		const dummyComments = [
 			{ id: 'c1', name: 'Jon Snow', text: 'i am the king in the north' },
 			{ id: 'c2', name: 'Khaleesi', text: 'i am the mother of dragons' },
-			{ id: 'c1', name: 'Severus Snape', text: 'i am the half blood prince' },
+			{ id: 'c3', name: 'Severus Snape', text: 'i am the half blood prince' },
 		];
 
 		console.log(dummyComments);
