@@ -1,9 +1,10 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
+
+import { getAllEvents } from '../../helpers/api-util';
 import EventList from '../../components/events/event-list';
 import EventSearch from '../../components/events/event-search';
-import { getAllEvents } from '../../helpers/api-util';
-import { useRouter } from 'next/router';
 
 function EventsPage(props) {
 	const router = useRouter();

@@ -41,7 +41,7 @@ function EventDetailPage(props) {
 export async function getStaticProps(context) {
 	const eventId = context.params.eventId;
 
-	const event = await getEventById();
+	const event = await getEventById(eventId);
 
 	return {
 		props: {
