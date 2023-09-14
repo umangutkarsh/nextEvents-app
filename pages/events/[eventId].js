@@ -6,6 +6,7 @@ import EventSummary from '../../components/event-detail/event-summary';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventContent from '../../components/event-detail/event-content';
 import ErrorAlert from '../../components/ui/error-alert';
+import Comments from '../../components/input/comments';
 
 function EventDetailPage(props) {
 	const event = props.selectedEvent;
@@ -32,12 +33,14 @@ function EventDetailPage(props) {
 				imageAlt={event.title}
 			/>
 			<EventContent>{event.description}</EventContent>
+			<Comments eventId={event.id} />
 		</React.Fragment>
 	);
 }
 
 export async function getStaticProps(context) {
 	const eventId = context.params.eventId;
+
 	const event = await getEventById();
 
 	return {
