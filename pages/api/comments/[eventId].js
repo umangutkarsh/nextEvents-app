@@ -38,14 +38,16 @@ async function handler(req, res) {
 	}
 
 	if (req.method === 'GET') {
-		const dummyComments = [
-			{ id: 'c1', name: 'Jon Snow', text: 'i am the king in the north' },
-			{ id: 'c2', name: 'Khaleesi', text: 'i am the mother of dragons' },
-			{ id: 'c3', name: 'Severus Snape', text: 'i am the half blood prince' },
-		];
+		const db = client.db();
 
-		console.log(dummyComments);
-		res.status(200).json({ comments: dummyComments });
+		const allComments = await db
+			.collection('comments')
+			.find()
+			.sort({ _id: -1 })
+			.toArray();
+
+		console.log(allComments);
+		res.status(200).json({ comments: allComments });
 	}
 
 	client.close();
