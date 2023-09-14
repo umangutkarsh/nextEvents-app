@@ -4,7 +4,7 @@ import classes from './newsletter-registration.module.css';
 function NewsletterRegistration() {
 	// const emailInputRef = useRef();
 	const [email, setEmail] = useState('');
-	const [signed, setSigned] = useState('');
+	const [signed, setSigned] = useState(false);
 
 	function registrationHandler(event) {
 		event.preventDefault();
@@ -26,14 +26,14 @@ function NewsletterRegistration() {
 			.then(data => console.log(data));
 
 		setEmail('');
-		setSigned('Signed Up!');
+		setSigned(true);
 	}
 
 	return (
 		<React.Fragment>
 			{signed && (
 				<p className='center' style={{ marginTop: '2rem' }}>
-					{signed}
+					Signed Up
 				</p>
 			)}
 			<section className={classes.newsletter}>
