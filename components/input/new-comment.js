@@ -4,91 +4,74 @@ import classes from './new-comment.module.css';
 function NewComment(props) {
 	const [isInvalid, setIsInvalid] = useState(false);
 
-	// const emailInputRef = useRef();
-	// const nameInputRef = useRef();
-	// const commentInputRef = useRef();
-
-	const [email, setEmail] = useState('');
-	const [name, setName] = useState('');
-	const [comment, setComment] = useState('');
-	const [post, setPost] = useState(false);
+	const emailInputRef = useRef();
+	const nameInputRef = useRef();
+	const commentInputRef = useRef();
 
 	function sendCommentHandler(event) {
 		event.preventDefault();
 
-		// const enteredEmail = emailInputRef.current.value;
-		// const enteredName = nameInputRef.current.value;
-		// const enteredComment = commentInputRef.current.value;
+		const enteredEmail = emailInputRef.current.value;
+		const enteredName = nameInputRef.current.value;
+		const enteredComment = commentInputRef.current.value;
 
 		if (
-			!email ||
-			email.trim() === '' ||
-			!email.includes('@') ||
-			!name ||
-			name.trim() === '' ||
-			!comment ||
-			comment.trim() === ''
+			!enteredEmail ||
+			enteredEmail.trim() === '' ||
+			!enteredEmail.includes('@') ||
+			!enteredName ||
+			enteredName.trim() === '' ||
+			!enteredComment ||
+			enteredComment.trim() === ''
 		) {
 			setIsInvalid(true);
 			return;
 		}
 
 		props.onAddComment({
-			email: email,
-			name: name,
-			text: comment,
+			email: enteredEmail,
+			name: enteredName,
+			text: enteredComment,
 		});
-
-		setEmail('');
-		setName('');
-		setComment('');
-		setPost(true);
 	}
 
 	return (
-		<React.Fragment>
-			{post && (
-				<p className='center' style={{ marginTop: '2rem' }}>
-					Comment Added
-				</p>
-			)}
-			<form className={classes.form} onSubmit={sendCommentHandler}>
-				<div className={classes.row}>
-					<div className={classes.control}>
-						<label htmlFor='email'>Your email</label>
-						<input
-							type='email'
-							id='email'
-							value={email}
-							onChange={event => setEmail(event.target.value)}
-							// ref={emailInputRef}
-						/>
-					</div>
-					<div className={classes.control}>
-						<label htmlFor='name'>Your name</label>
-						<input
-							type='text'
-							id='name'
-							value={name}
-							onChange={event => setName(event.target.value)}
-							// ref={nameInputRef}
-						/>
-					</div>
+		<form className={classes.form} onSubmit={sendCommentHandler}>
+			<div className={classes.row}>
+				<div className={classes.control}>
+					<label htmlFor='email'>Your email</label>
+					<input
+						type='email'
+						id='email'
+						value={email}
+						onChange={event => setEmail(event.target.value)}
+						ref={emailInputRef}
+					/>
 				</div>
 				<div className={classes.control}>
-					<label htmlFor='comment'>Your comment</label>
-					<textarea
-						id='comment'
-						rows='5'
-						value={comment}
-						onChange={event => setComment(event.target.value)}
-						// ref={commentInputRef}
-					></textarea>
+					<label htmlFor='name'>Your name</label>
+					<input
+						type='text'
+						id='name'
+						value={name}
+						onChange={event => setName(event.target.value)}
+						ref={nameInputRef}
+					/>
 				</div>
-				{isInvalid && <p>Please enter a valid email address and comment!</p>}
-				<button>Submit</button>
-			</form>
-		</React.Fragment>
+			</div>
+			<div className={classes.control}>
+				<label htmlFor='comment'>Your comment</label>
+				<textarea
+					id='comment'
+					rows='5'
+					value={comment}
+					onChange={event => setComment(event.target.value)}
+					ref={commentInputRef}
+				></textarea>
+			</div>
+			{isInvalid && <p>Please enter a valid email address and comment!</p>}
+			<button>Submit</button>
+		</form>
 	);
 }
 
