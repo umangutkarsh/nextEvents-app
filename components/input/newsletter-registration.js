@@ -16,7 +16,7 @@ function NewsletterRegistration() {
 		let enteredEmail = emailInputRef.current.value;
 
 		notificationCtx.showNotification({
-			title: 'Pending...',
+			title: 'Signing Up...',
 			message: 'Registering for newsletter',
 			status: 'pending',
 		});
@@ -51,6 +51,8 @@ function NewsletterRegistration() {
 					status: 'error',
 				});
 			});
+
+		enteredEmail = '';
 	}
 
 	return (
