@@ -38,19 +38,19 @@ In this project:
 ## Features
 The Events App offers a range of features to make event management and exploration easy and enjoyable:
 
-**1. Register for Newsletter**
+**1. Register for Newsletter**:
 Users can register for a newsletter to stay updated about upcoming events and receive event-related news and information.
 
-**2. Display Featured Events**
+**2. Display Featured Events**:
 Featured events are prominently displayed on the app's homepage, making it easy for users to discover and explore the most exciting and important events.
 
-**3. Explore Single Event Description**
+**3. Explore Single Event Description**:
 Users can click on an event to view detailed information, including the event's date, time, location, description, and any associated images.
 
-**4. Write a Comment and View Comments**
+**4. Write a Comment and View Comments**:
 Users can leave comments on event pages, sharing their thoughts and experiences. They can also view comments left by others, fostering interaction and engagement.
 
-**5. Filter Events by Year and Month**
+**5. Filter Events by Year and Month**:
 Events can be filtered by year and month, allowing users to quickly find events that match their preferences and schedules.
 
 <br />
