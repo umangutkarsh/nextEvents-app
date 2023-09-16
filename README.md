@@ -27,11 +27,11 @@ In this project:
 <br />
 
 ## Contents
-* [Features]
-* [Advantages of using Next.js]
-* [Getting started]
-* [API endpoints]
-* [Testing with Postman]
+* [Features](https://github.com/umangutkarsh/nextEvents-app/tree/main#features)
+* [Advantages of using Next.js](https://github.com/umangutkarsh/nextEvents-app/tree/main#advantages-of-using-nextjs)
+* [Getting started](https://github.com/umangutkarsh/nextEvents-app/tree/main#getting-started)
+* [API endpoints](https://github.com/umangutkarsh/nextEvents-app/tree/main#api-endpoints)
+* [Testing with Postman](https://github.com/umangutkarsh/nextEvents-app/tree/main#testing-with-postman)
 
 <br />
 
