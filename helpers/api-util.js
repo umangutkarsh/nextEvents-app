@@ -1,7 +1,9 @@
-import { fetchApi } from '../config/fetch';
+import { fetchApi } from '../configuration/fetch';
 
 export async function getAllEvents() {
-	const response = await fetchApi();
+	const response = await fetch(
+		`https://nextjs-course-ad71e-default-rtdb.firebaseio.com/events.json`
+	);
 	const data = await response.json();
 
 	const events = [];
